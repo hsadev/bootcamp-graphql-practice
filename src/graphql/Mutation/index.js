@@ -1,6 +1,5 @@
 const merge = require('lodash.merge')
-const Auth = require('./Auth')
 
-const resolvers = [Auth]
+const resolvers = []
 
 module.exports = merge(...resolvers)

@@ -1,8 +1,10 @@
 
-const welcome = async () => 'Welcome to the DEV backend starter!'
+const welcome = async () => 'GraphQL Exercises!'
+
 
 const resolver = {
   Query: { welcome },
+
 }
 
 module.exports = resolver
