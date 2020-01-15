@@ -1,11 +1,12 @@
-const { snakeCaseMappers, Model } = require('objection')
+const { Model } = require('objection')
 const knex = require('../lib/knex')
 
 Model.knex(knex)
 
 class BaseModel extends Model {
-  static get columnNameMappers() {
-    return snakeCaseMappers()
+  async $beforeUpdate(opt, queryContext) {
+    await super.$beforeUpdate(opt, queryContext)
+    this.updatedAt = new Date()
   }
 }
 

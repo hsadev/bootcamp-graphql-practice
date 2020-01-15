@@ -9,8 +9,6 @@ casual.define('author', addressId => ({
   age: casual.integer(20, 100),
   numBooksPublished: casual.integer(1, 4),
   addressId,
-  created_at: casual.moment,
-  updated_at: casual.moment,
 }))
 
 

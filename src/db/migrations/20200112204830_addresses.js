@@ -13,6 +13,9 @@ exports.up = knex => knex.schema.createTable('addresses', table => {
   table.string('state').notNullable()
 
   table.string('zip').notNullable()
+
+  table.timestamp('createdAt').defaultTo(knex.fn.now())
+  table.timestamp('updatedAt').defaultTo(knex.fn.now())
 })
 
 exports.down = knex => knex.schema.dropTableIfExists('addresses')

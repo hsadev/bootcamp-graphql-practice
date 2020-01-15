@@ -25,6 +25,9 @@ exports.up = knex => knex.schema.createTable('books', table => {
     .uuid('publisherId')
     .references('publishers.id')
     .notNullable()
+
+  table.timestamp('createdAt').defaultTo(knex.fn.now())
+  table.timestamp('updatedAt').defaultTo(knex.fn.now())
 })
 
 exports.down = knex => knex.schema.dropTableIfExists('books')
