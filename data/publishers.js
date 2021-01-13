@@ -9,7 +9,6 @@ casual.define('publisher', addressId => ({
   addressId,
 }))
 
-
 const publishers = []
 
 for (let i = 0; i < 10; ++i) {
